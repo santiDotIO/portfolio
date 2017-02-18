@@ -1,5 +1,6 @@
 'use strict';
 require('dotenv').config();
+const host = (typeof process.env.VIRTUAL_HOST == 'undefiend') ? `http://localhost:${process.env.PORT}` : `http://${process.env.VIRTUAL_HOST}`
 
 const joinPath = require('path').join;
 const express = require('express');
@@ -22,4 +23,5 @@ server.get('/', (req, res) => {
 	return res.render('index', hbsData);
 });
 
-server.listen(process.env.PORT, ()=>console.log(`http://localhost:${process.env.PORT}`));
+// console.log(process.env);
+server.listen(process.env.PORT, ()=>console.log(host));
