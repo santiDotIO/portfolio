@@ -5,11 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>{{ site_name }}</title>
+
+	{{> assets meta_data=true}}
+	{{> assets fb_open_graph=true}}
+
 	{{> assets styles="true"}}
 	{{> assets ga=true}}
 </head>
 <body>
-	<div class="container row align-middle {{!-- text-center --}}">
+	<div class="container row align-middle">
 
 		<div class="column small-12 medium-10 medium-offset-1">
 			<div class="row">
