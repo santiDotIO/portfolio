@@ -23,6 +23,7 @@ server.get('/', (req, res) => {
 	return res.render('index', hbsData);
 });
 
+// redirect all non-files to root
 server.all('/:path', (req, res) => {
 	return res.status(301).redirect('/');
 });
