@@ -1,3 +1,30 @@
 {
-	"site_name": "Santiago J Sosa"
+	"site_name": "Santiago J. Sosa",
+	"headshot":{
+		"image": "/assets/santiago-sosa-headshot.jpg",
+		"alt": "Santiago J Sosa – New York City based web developer"
+	},
+	"body": {
+		"intro": "Well rounded Web developer with experince on multiple Frontend and Backend platforms",
+		"copy": [
+			"Passinate problem solver."
+		]
+	},
+	"social": [{
+		"icon":"fa-twitter",
+		"url": "https://twitter.com/santi6291",
+		"target": "_blank"
+	},{
+		"icon":"fa-github",
+		"url": "https://github.com/santi6291",
+		"target": "_blank"
+	},{
+		"icon":"fa-linkedin",
+		"url": "https://www.linkedin.com/in/santiagojsosa/",
+		"target": "_blank"
+	},{
+		"icon":"fa-envelope",
+		"url": "mailto:info@santiagojsosa.com",
+		"target": "_self"
+	}]
 }
