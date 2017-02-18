@@ -3,3 +3,6 @@ dev:
 
 watch:
 	cd gulp && ../node_modules/.bin/gulp watch
+
+build:
+	cd gulp && ../node_modules/.bin/gulp --production
