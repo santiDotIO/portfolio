@@ -4,7 +4,8 @@
   "description": "[Sample](https://designbyatlas.com/)",
   "main": "index.js",
   "scripts": {
-    "start": "make boot"
+    "production": "make boot-prod",
+    "development": "make boot-dev"
   },
   "repository": {
     "type": "git",

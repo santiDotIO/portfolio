@@ -1,18 +1,34 @@
 update:
+	@# use to ensure all modules are installed
 	npm install;
 
-server:
+nodejs:
+	@# init node
 	node index.js
-dev:
-	./node_modules/.bin/nodemon -e js,hbs,scss,json index.js
 
-watch:
-	cd gulp && ../node_modules/.bin/gulp watch
+server-dev:
+	@# Using nodemon to watch files over gulp
+	@# This allows to restart server if FE files change and also handlebars
+	./node_modules/.bin/nodemon -e js,hbs,scss,json --watch src --watch index.js --exec "make boot-dev";
 
-build:
+build-prod:
+	@# Look at./gulp/README.md for more info
 	cd gulp && ../node_modules/.bin/gulp --production
 
-boot:
+build-dev:
+	@# Look at./gulp/README.md for more info
+	cd gulp && ../node_modules/.bin/gulp
+
+boot-prod:
+	@# ensure all assets are installed
 	make update
-	make build
-	make server
+	@# build FE assets
+	make build-prod
+	@# run server
+	make nodejs
+
+boot-dev:
+	@# build assets with mapping
+	make build-dev 
+	@# run server
+	make nodejs
