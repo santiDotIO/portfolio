@@ -23,14 +23,24 @@
 	<meta name="url" content="http://{{host_name}}/">
 {{/if}}
 
-{{#if fb_open_graph}}
+{{#if facebook}}
 {{!-- <meta property="fb:app_id" name="123456789"> --}}
-<meta property="og:url" name="http://{{host_name}}/">
-<meta property="og:type" name="website">
-<meta property="og:title" name="{{site_name}}">
-<meta property="og:image" name="http://{{site_name}}{{headshot.image}}">
-<meta property="og:description" name="{{body.intro}}">
-<meta property="og:site_name" name="{{site_name}}">
-<meta property="og:locale" name="en_US">
+<meta property="og:url" content="http://{{host_name}}/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{site_name}}">
+<meta property="og:image" content="http://{{site_name}}{{headshot.image}}">
+<meta property="og:description" content="{{body.intro}}">
+<meta property="og:site_name" content="{{site_name}}">
+<meta property="og:locale" content="en_US">
 {{!-- <meta property="article:author" name=""> --}}
+{{/if}}
+
+{{#if twitter}}
+<meta name="twitter:card" content="{{body.intro}}">
+<meta name="twitter:site" content="@santi6291">
+<meta name="twitter:creator" content="@santi6291">
+<meta name="twitter:url" content="http://{{host_name}}/">
+<meta name="twitter:title" content="{{site_name}}">
+<meta name="twitter:description" content="{{body.intro}}">
+<meta name="twitter:image" content="http://{{site_name}}{{headshot.image}}">
 {{/if}}
