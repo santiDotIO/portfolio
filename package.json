@@ -4,7 +4,7 @@
   "description": "[Sample](https://designbyatlas.com/)",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && node index.js"
+    "start": "make boot"
   },
   "repository": {
     "type": "git",
