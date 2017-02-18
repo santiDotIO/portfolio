@@ -1,4 +1,10 @@
 <header class="column small-12">
-	<h1>{{ site_name }}</h1>
-	<img src="{{ headshot.image }}" alt="{{ headshot.alt }}" class="headshot">
+	<div class="row align-middle">
+		<div class="column shrink">
+			<img src="{{ headshot.image }}" alt="{{ headshot.alt }}" class="headshot thumbnail">	
+		</div>
+		<div class="column">
+			<h1>{{ site_name }}</h1>
+		</div>
+	</div>
 </header>

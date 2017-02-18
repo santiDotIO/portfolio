@@ -2,14 +2,17 @@ $fa-font-path: '../assets/font-awesome';
 
 @import '../../node_modules/foundation-sites/scss/foundation';
 @import './vendor/font-awesome/font-awesome';
+// @include foundation-everything($flex: true);
 
 @include foundation-flex-grid;
 @include foundation-visibility-classes;
 @include foundation-flex-classes;
-// @include foundation-typography;
+@include foundation-typography;
+@include foundation-thumbnail;
 
 *{
 	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
 }
 
 body, html {
@@ -19,39 +22,60 @@ body, html {
 
 .container{
 	min-height: 100vh;
-	text-align:center;
+	padding: rem-calc(16px) 0;
 }
 
-.headshot{
-	border-radius: 100%;
-	max-width: 200px;
-	box-shadow: 0 1px 5px 0px #555;
-}
+header{
+	.headshot{
+		border-radius: 100%;
+		max-width: rem-calc(150px);
 
-h1{
-	// font-size: 4rem;
-	font-size: 2.6rem;
+		@include breakpoint(medium) {
+			max-width: rem-calc(200px);
+		}
+	}
+
+	h1{
+		font-size: rem-calc(32px);
+		line-height: 1;
+		font-weight: bold;
+		
+		@include breakpoint(medium) {
+			font-size: rem-calc(80px);
+		}
+	}
 }
 
 main{
-	font-size: 1.4rem;
+	// font-size: rem-calc(22px);
 	font-weight: 300;
+
+	@include breakpoint(medium) {
+		font-size: rem-calc(30px);
+	}
 }
 
 .intro{
 	font-weight: normal;
-	font-size: 25px;
+	font-size: rem-calc(18px);
+
+	@include breakpoint(medium) {
+		font-size: rem-calc(40px);
+	}
 }
 
 .social{
-	// text-align: right;
-	font-size: 40px;
+	font-size: rem-calc(35px);
+
+	@include breakpoint(medium) {
+		font-size: rem-calc(60px);
+	}
 
 	a{
 		color: black;
 		text-decoration: none;
 		transition: opacity 0.5s;
-		margin: 0 10px;
+		margin: 0 rem-calc(10px);
 
 		&:hover{
 			opacity: 0.75;

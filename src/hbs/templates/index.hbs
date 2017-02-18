@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-
 	<title>{{ site_name }}</title>
 	{{> assets styles="true"}}
+	{{> assets ga=true}}
 </head>
 <body>
-	<div class="container row align-middle">
+	<div class="container row align-middle {{!-- text-center --}}">
 
-		<div class="column small-12 medium-8 medium-offset-2">
+		<div class="column small-12 medium-10 medium-offset-1">
 			<div class="row">
 				{{> header}}
 			</div>
@@ -23,6 +23,5 @@
 			</div>
 		</div>
 	</div>
-	{{> assets ga=true}}
 </body>
 </html>
