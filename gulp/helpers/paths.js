@@ -16,9 +16,6 @@ paths.src.scss = projectRoot + '/src/scss/*.scss',
 paths.src.js = [
     // main JS file
     projectRoot + '/src/js/app.js',
-
-    // FE dependecies
-    // nodeModules + '/jquery/dist/jquery.js',
 ]
 
 // Directories to watch
