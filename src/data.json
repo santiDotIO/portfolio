@@ -5,9 +5,10 @@
 		"alt": "Santiago J Sosa – New York City based web developer"
 	},
 	"body": {
-		"intro": "Well rounded Web developer with experince on multiple Frontend and Backend platforms",
+		"intro": "Well rounded Web developer with experience on multiple Front-end and Back-end platforms.",
 		"copy": [
-			"Passinate problem solver."
+			"Passionate problem solver and simplicity enthusiast. I like to keep things simple but add complexity where needed to provide a future proof solution.",
+			"I have experience with a wide array of tools using <strong>Nodejs</strong>, <strong>PHP</strong> and <strong>devops</strong>."
 		]
 	},
 	"social": [{
