@@ -9,7 +9,7 @@ nodejs:
 server-dev:
 	@# Using nodemon to watch files over gulp
 	@# This allows to restart server if FE files change and also handlebars
-	./node_modules/.bin/nodemon -e js,hbs,scss,json --watch src --watch index.js --exec "make boot-dev";
+	./node_modules/.bin/nodemon -e js,hbs,scss,json --watch src --exec "make boot-dev";
 
 build-prod:
 	@# Look at./gulp/README.md for more info
