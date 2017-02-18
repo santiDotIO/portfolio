@@ -23,5 +23,9 @@ server.get('/', (req, res) => {
 	return res.render('index', hbsData);
 });
 
+server.all('/:path', (req, res) => {
+	return res.status(301).redirect('/');
+});
+
 // console.log(process.env);
 server.listen(process.env.PORT, ()=>console.log(host));
