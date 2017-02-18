@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "production": "make boot-prod",
-    "development": "make boot-dev"
+    "development": "make server-dev"
   },
   "repository": {
     "type": "git",
