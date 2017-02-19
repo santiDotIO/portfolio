@@ -27,3 +27,6 @@ boot-prod:
 	@# run server
 	make nodejs
 
+deploy:
+	cd ./portfolio-static/web && git pull origin master
+	cd ./portfolio-static && docker-compose up
