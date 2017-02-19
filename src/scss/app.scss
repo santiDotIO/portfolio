@@ -6,7 +6,7 @@ $header-font-family: 'Roboto', sans-serif;
 @import './vendor/font-awesome/font-awesome';
 
 @include foundation-flex-grid;
-@include foundation-visibility-classes;
+// @include foundation-visibility-classes;
 @include foundation-flex-classes;
 @include foundation-typography;
 @include foundation-thumbnail;

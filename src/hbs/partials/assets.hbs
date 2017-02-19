@@ -1,6 +1,11 @@
 {{#if styles}}
-<link rel="stylesheet" href="/css/app.css">
-<script src="/js/app.js" async></script>
+  {{#if isProd}}
+    <style class="styles"></style>
+  {{else}}
+    <link rel="stylesheet" href="/css/app.css">
+  {{/if}}
+  
+  <script src="/js/app.js" async></script>
 {{/if}}
 
 {{#if ga}}
