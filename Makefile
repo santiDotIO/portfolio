@@ -29,7 +29,7 @@ boot-prod:
 
 boot-dev:
 	@# build assets with mapping
-	make build-dev 
+	# make build-dev 
 	@# run server
 	make nodejs
 
