@@ -10,6 +10,6 @@ pipelines:
     - step:
         script: # Modify the commands below to build your repository.
           - mkdir -p ~/.ssh
-          - cat known_hosts >> ~/.ssh/known_hosts
+          # - cat known_hosts >> ~/.ssh/known_hosts
           - (umask  077 ; echo $MY_SSH_KEY | base64 --decode -i > ~/.ssh/id_rsa)
           - make deploy
