@@ -30,14 +30,16 @@ server.get('/', (req, res) => {
 });
 
 server.post('/_deploy', (req, res) => {
-	console.log(new Date(), req.get('User-Agent'))
-	if ( !(/Bitbucket-Webhooks/.test(req.get('User-Agent'))) ) {
-		return res.status(301).redirect('/');
-	}
+	const isBitBucket = /Bitbucket-Webhooks/.test(req.get('User-Agent'));
+	const pushToMaster = req.body.push.changes[0].new.name === 'master'
 
-	console.log(req.body);
-	return res.json(req.body);
-	// return res.send('deploy script');
+	console.log(new Date(), req.get('User-Agent'))
+	console.log(req.body.push.changes[0].new.name);
+	
+	if ( !isBitBucket && pushToMaster) {
+		return res.send('deploy script');
+	}
+	return res.status(403).redirect('/');
 });
 
 
