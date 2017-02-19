@@ -19,12 +19,22 @@ server.set('view engine', 'hbs');
 server.set('views', viewFields);
 hbs.registerPartials(partialsFiles);
 
-
+// main route
 server.get('/', (req, res) => {
 	console.log(new Date(), 'index')
 	hbsData.isProd = isProd;
 	return res.render('index', hbsData);
 });
+
+
+// redirect non-www to www
+app.get('/*', function(req, res, next) {
+  if (req.headers.host.match(/^www/) !== null ) {
+    res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
+  } else {
+    next(); 
+  }
+})
 
 // redirect all non-files to root
 server.all('/:path', (req, res) => {
