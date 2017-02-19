@@ -4,6 +4,8 @@ const host = (typeof process.env.VIRTUAL_HOST == 'undefiend') ? `http://localhos
 
 const joinPath = require('path').join;
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const hbs = require('hbs');
 const hbsData = require('./src/data.json');
 
@@ -19,6 +21,7 @@ server.set('view engine', 'hbs');
 server.set('views', viewFields);
 hbs.registerPartials(partialsFiles);
 
+app.use(bodyParser.json()); // for parsing application/json
 
 server.get('/', (req, res) => {
 	console.log(new Date(), 'index')
@@ -28,11 +31,13 @@ server.get('/', (req, res) => {
 
 server.post('/_deploy', (req, res) => {
 	console.log(new Date(), req.get('User-Agent'))
-	
 	if ( !(/Bitbucket-Webhooks/.test(req.get('User-Agent'))) ) {
 		return res.status(301).redirect('/');
 	}
-	return res.send('deploy script');
+
+	console.log(req.body);
+	return res.json(req.body);
+	// return res.send('deploy script');
 });
 
 
