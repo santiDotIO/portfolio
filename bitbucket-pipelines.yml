@@ -12,4 +12,4 @@ pipelines:
           - mkdir -p ~/.ssh
           - echo "159.203.136.184 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGqghr9ZL6GXfHZ7BEv6E+zmbPIUujt1ZGUW/ugEupilC0/zkS6lN8jWzzIXVM95uGVGTLANekBEl0H0oSH3ti4=" > ./test.txt
           - (umask  077 ; echo $MY_SSH_KEY | base64 --decode -i > ~/.ssh/id_rsa)
-          - ssh root@159.203.136.184 #'cd ~/portfolio-static/web && make deploy'
+          - make deploy
