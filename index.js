@@ -28,7 +28,7 @@ server.get('/', (req, res) => {
 
 
 // redirect non-www to www
-app.get('/*', function(req, res, next) {
+server.get('/*', function(req, res, next) {
   if (req.headers.host.match(/^www/) !== null ) {
     res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
   } else {
