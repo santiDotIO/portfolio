@@ -21,21 +21,24 @@ hbs.registerPartials(partialsFiles);
 
 
 server.get('/', (req, res) => {
+	console.log('root')
 	hbsData.isProd = isProd;
 	return res.render('index', hbsData);
 });
 
 server.get('/_deploy', (req, res) => {
+	console.log(req.get('User-Agent'))
+	
 	if ( !(/Bitbucket/.test(req.get('User-Agent'))) ) {
 		return res.status(301).redirect('/');
 	}
-	console.log(req.get('User-Agent'))
 	return res.send('deploy script');
 });
 
 
 // redirect all non-files to root
 server.all('/:path', (req, res) => {
+	console.log('redirect')
 	return res.status(301).redirect('/');
 });
 
