@@ -4,13 +4,27 @@ $header-font-family: 'Roboto', sans-serif;
 
 @import '../../node_modules/foundation-sites/scss/foundation';
 @import './vendor/font-awesome/font-awesome';
-// @include foundation-everything($flex: true);
 
 @include foundation-flex-grid;
 @include foundation-visibility-classes;
 @include foundation-flex-classes;
 @include foundation-typography;
 @include foundation-thumbnail;
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/roboto/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/roboto/Roboto-Black.ttf');
+}
 
 *{
 	font-family: 'Roboto', sans-serif;
