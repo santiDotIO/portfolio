@@ -28,6 +28,6 @@ boot-prod:
 	make nodejs
 
 deploy:
-	echo pwd;
+	pwd
 	cd ./portfolio-static/web && git pull origin master
 	cd ./portfolio-static && docker-compose restart
