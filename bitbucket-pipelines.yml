@@ -9,4 +9,4 @@ pipelines:
   default:
     - step:
         script: # Modify the commands below to build your repository.
-          - ssh docker-personal 'cd ~/portfolio-static/web && make deploy'
+          - ssh root@159.203.136.184 'cd ~/portfolio-static/web && make deploy'
