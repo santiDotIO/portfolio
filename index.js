@@ -5,13 +5,14 @@ const host = (typeof process.env.VIRTUAL_HOST == 'undefiend') ? `http://localhos
 const joinPath = require('path').join;
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const hbs = require('hbs');
-const hbsData = require('./src/data.json');
+
+const deployScript = require('./deploy/deploy.js');
 
 const server = express();
 const staticFiles = joinPath(__dirname, './', 'public');
 
+const hbsData = require('./src/data.json');
 const viewFields = joinPath(__dirname, './', 'src/hbs/templates');
 const partialsFiles = joinPath(__dirname, './', 'src/hbs/partials');
 let isProd = /santiagojsosa.com/.test(host);
