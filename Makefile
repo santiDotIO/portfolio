@@ -35,5 +35,4 @@ boot-dev:
 
 test:
 	echo `date` > './text.txt'
-	git commit -am "test `date`"
-	git push origin master
+	git commit -am "test `date`" && git push origin master
