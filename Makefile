@@ -1,7 +1,7 @@
 update:
 	@# use to ensure all modules are installed
 	@# npm install;
-	docker run --rm -v '`pwd`/web:/usr/src/app' --workdir '/usr/src/app' node:6.9 npm install;
+	docker run --rm -v `pwd`/web:/usr/src/app --workdir /usr/src/app node:6.9 npm install;
 
 nodejs:
 	@# init node
@@ -15,7 +15,7 @@ server-dev:
 build-prod:
 	@# Look at./gulp/README.md for more info
 	@# cd gulp && ../node_modules/.bin/gulp --production
-	docker run --rm -v '`pwd`/web:/usr/src/app' --workdir '/usr/src/app/gulp' node:6.9 ../node_modules/.bin/gulp --production;
+	docker run --rm -v `pwd`/web:/usr/src/app --workdir /usr/src/app/gulp node:6.9 ../node_modules/.bin/gulp --production;
 
 build-dev:
 	@# Look at./gulp/README.md for more info
