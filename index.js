@@ -4,7 +4,6 @@ const host = (typeof process.env.VIRTUAL_HOST == 'undefiend') ? `http://localhos
 
 const joinPath = require('path').join;
 const express = require('express');
-const bodyParser = require('body-parser');
 const hbs = require('hbs');
 
 const server = express();
@@ -20,7 +19,6 @@ server.set('view engine', 'hbs');
 server.set('views', viewFields);
 hbs.registerPartials(partialsFiles);
 
-server.use(bodyParser.json()); // for parsing application/json
 
 server.get('/', (req, res) => {
 	console.log(new Date(), 'index')
