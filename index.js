@@ -26,10 +26,10 @@ server.get('/', (req, res) => {
 });
 
 server.get('/_deploy', (req, res) => {
-	if (req.query.token !== process.env.deploy_pass) {
+	if ( !(/Bitbucket/.test(req.get('User-Agent'))) ) {
 		return res.status(301).redirect('/');
 	}
-	console.log(req.query.token)
+	console.log(req.get('User-Agent'))
 	return res.send('deploy script');
 });
 
