@@ -35,4 +35,4 @@ boot-dev:
 
 test:
 	echo `date` > './text.txt'
-	git commit -am 'test `date`'
+	git commit -am "test `date`"
