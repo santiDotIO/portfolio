@@ -29,4 +29,4 @@ boot-prod:
 
 deploy:
 	cd ./portfolio-static/web && git pull origin master
-	cd ./portfolio-static && docker-compose up
+	cd ./portfolio-static && docker-compose restart
