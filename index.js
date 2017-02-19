@@ -25,6 +25,15 @@ server.get('/', (req, res) => {
 	return res.render('index', hbsData);
 });
 
+server.get('/_deploy', (req, res) => {
+	if (req.query.token !== process.env.deploy_pass) {
+		return res.status(301).redirect('/');
+	}
+	console.log(req.query.token)
+	return res.send('deploy script');
+});
+
+
 // redirect all non-files to root
 server.all('/:path', (req, res) => {
 	return res.status(301).redirect('/');
