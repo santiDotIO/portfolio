@@ -29,5 +29,5 @@ boot-prod:
 
 deploy:
 	pwd
-	cd ./portfolio-static/web && git pull origin master
-	cd ./portfolio-static && docker-compose restart
+	git pull origin master
+	cd ../ && docker-compose restart
