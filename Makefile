@@ -31,6 +31,5 @@ deploy:
 	ssh root@159.203.136.184 'cd ~/portfolio-static/web && make do-deploy'
 
 make do-deploy:
-	ssh -T git@bitbucket.org
-	# git pull origin master
-	# cd ../ && docker-compose restart
+	git pull origin master
+	cd ../ && docker-compose restart
