@@ -27,6 +27,8 @@ paths.watch = {
 // where to drop compiled files
 paths.dest = {
     css: projectRoot + '/public/css/',
+    cssTarget: projectRoot + '/src/hbs/partials/assets.hbs',
+    cssSelector: '.styles',
     js: projectRoot + '/public/js/'
 };
 

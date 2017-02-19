@@ -12,14 +12,16 @@ const staticFiles = joinPath(__dirname, './', 'public');
 
 const viewFields = joinPath(__dirname, './', 'src/hbs/templates');
 const partialsFiles = joinPath(__dirname, './', 'src/hbs/partials');
-
+let isProd = /santiagojsosa.com/.test(host);
 
 server.use(express.static(staticFiles));
 server.set('view engine', 'hbs');
 server.set('views', viewFields);
 hbs.registerPartials(partialsFiles);
 
+
 server.get('/', (req, res) => {
+	hbsData.isProd = isProd;
 	return res.render('index', hbsData);
 });
 
