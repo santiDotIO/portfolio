@@ -29,7 +29,7 @@ server.get('/', (req, res) => {
 server.get('/_deploy', (req, res) => {
 	console.log(new Date(), req.get('User-Agent'))
 	
-	if ( !(/Bitbucket/.test(req.get('User-Agent'))) ) {
+	if ( !(/Bitbucket-Webhooks/.test(req.get('User-Agent'))) ) {
 		return res.status(301).redirect('/');
 	}
 	return res.send('deploy script');
