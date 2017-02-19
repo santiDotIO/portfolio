@@ -36,7 +36,7 @@ server.post('/_deploy', (req, res) => {
 	console.log(new Date(), req.get('User-Agent'))
 	console.log(req.body.push.changes[0].new.name);
 	
-	if ( !isBitBucket && pushToMaster) {
+	if ( isBitBucket && pushToMaster) {
 		return res.send('deploy script');
 	}
 	return res.status(403).redirect('/');
