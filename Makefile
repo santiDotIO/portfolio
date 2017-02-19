@@ -27,12 +27,3 @@ boot-prod:
 	@# run server
 	make nodejs
 
-boot-dev:
-	@# build assets with mapping
-	# make build-dev 
-	@# run server
-	make nodejs
-
-test:
-	echo `date` > './text.txt'
-	git commit -am "test `date`" && git push origin master

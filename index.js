@@ -7,8 +7,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
 
-const deployScript = require('./deploy/deploy.js');
-
 const server = express();
 const staticFiles = joinPath(__dirname, './', 'public');
 
@@ -29,20 +27,6 @@ server.get('/', (req, res) => {
 	hbsData.isProd = isProd;
 	return res.render('index', hbsData);
 });
-
-server.post('/_deploy', (req, res) => {
-	const isBitBucket = /Bitbucket-Webhooks/.test(req.get('User-Agent'));
-	const pushToMaster = req.body.push.changes[0].new.name === 'master'
-
-	console.log(new Date(), req.get('User-Agent'))
-	console.log(req.body.push.changes[0].new.name);
-	
-	if ( isBitBucket && pushToMaster) {
-		return res.send('deploy script');
-	}
-	return res.status(403).redirect('/');
-});
-
 
 // redirect all non-files to root
 server.all('/:path', (req, res) => {
