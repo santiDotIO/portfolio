@@ -21,7 +21,7 @@ server.set('view engine', 'hbs');
 server.set('views', viewFields);
 hbs.registerPartials(partialsFiles);
 
-app.use(bodyParser.json()); // for parsing application/json
+server.use(bodyParser.json()); // for parsing application/json
 
 server.get('/', (req, res) => {
 	console.log(new Date(), 'index')
