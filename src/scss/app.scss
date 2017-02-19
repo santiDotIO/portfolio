@@ -1,9 +1,7 @@
-$fa-font-path: '../assets/font-awesome';
 $body-font-family: 'Roboto', sans-serif;
 $header-font-family: 'Roboto', sans-serif;
 
 @import '../../node_modules/foundation-sites/scss/foundation';
-@import './vendor/font-awesome/font-awesome';
 
 @include foundation-flex-grid;
 // @include foundation-visibility-classes;
@@ -44,29 +42,26 @@ body, html {
 	padding: rem-calc(16px) 0;
 }
 
-header{
-	.headshot{
-		border-radius: 100%;
-		max-width: rem-calc(150px);
+.header__headshot{
+	border-radius: 100%;
+	max-width: rem-calc(150px);
 
-		@include breakpoint(medium) {
-			max-width: rem-calc(200px);
-		}
+	@include breakpoint(medium) {
+		max-width: rem-calc(200px);
 	}
+}
 
-	h1{
-		font-size: rem-calc(32px);
-		line-height: 1;
-		font-weight: bold;
-		
-		@include breakpoint(medium) {
-			font-size: rem-calc(80px);
-		}
+.header__site-title{
+	font-size: rem-calc(32px);
+	line-height: 1;
+	font-weight: bold;
+
+	@include breakpoint(medium) {
+		font-size: rem-calc(80px);
 	}
 }
 
 main{
-	// font-size: rem-calc(22px);
 	font-weight: 300;
 
 	@include breakpoint(medium) {
@@ -83,21 +78,21 @@ main{
 	}
 }
 
-.social{
-	font-size: rem-calc(35px);
+.social__link{
+	color: black;
+	text-decoration: none;
+	transition: opacity 0.5s;
+	margin: 0 rem-calc(10px);
+
+	&:hover{
+		opacity: 0.75;
+	}
+}
+
+.social__image{
+	width: rem-calc(35px);
 
 	@include breakpoint(medium) {
-		font-size: rem-calc(60px);
-	}
-
-	a{
-		color: black;
-		text-decoration: none;
-		transition: opacity 0.5s;
-		margin: 0 rem-calc(10px);
-
-		&:hover{
-			opacity: 0.75;
-		}
+		width: rem-calc(60px);
 	}
 }

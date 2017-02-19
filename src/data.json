@@ -13,19 +13,19 @@
 		]
 	},
 	"social": [{
-		"icon":"fa-twitter",
+		"icon":"assets/icons/twitter.svg",
 		"url": "https://twitter.com/santi6291",
 		"target": "_blank"
 	},{
-		"icon":"fa-github",
+		"icon":"assets/icons/github.svg",
 		"url": "https://github.com/santi6291",
 		"target": "_blank"
 	},{
-		"icon":"fa-linkedin",
+		"icon":"assets/icons/linkedin.svg",
 		"url": "https://www.linkedin.com/in/santiagojsosa/",
 		"target": "_blank"
 	},{
-		"icon":"fa-envelope",
+		"icon":"assets/icons/envelope.svg",
 		"url": "mailto:info@santiagojsosa.com",
 		"target": "_self"
 	}]
