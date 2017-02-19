@@ -1,6 +1,7 @@
 update:
 	@# use to ensure all modules are installed
-	npm install;
+	@# npm install;
+	docker run --rm -v $HOME/app/web:/usr/src/app --workdir /usr/src/app node:6.9 npm install;
 
 nodejs:
 	@# init node
@@ -13,23 +14,22 @@ server-dev:
 
 build-prod:
 	@# Look at./gulp/README.md for more info
-	cd gulp && ../node_modules/.bin/gulp --production
+	@# cd gulp && ../node_modules/.bin/gulp --production
+	docker run --rm -v $HOME/app/web:/usr/src/app --workdir /usr/src/app/gulp node:6.9 ../node_modules/.bin/gulp --production;
 
 build-dev:
 	@# Look at./gulp/README.md for more info
 	cd gulp && ../node_modules/.bin/gulp
 
 boot-prod:
-	@# ensure all assets are installed
-	make update
-	@# build FE assets
-	make build-prod
 	@# run server
 	make nodejs
 
 deploy:
-	ssh root@159.203.136.184 'cd ~/portfolio-static/web && make do-deploy'
+	ssh portfolio@159.203.136.184 'cd $HOME/app/web && make do-deploy'
 
 make do-deploy:
 	git pull origin master
+	make update
+	make build-prod
 	cd ../ && docker-compose restart
