@@ -5,10 +5,8 @@ const argv = require('yargs').argv;
 
 // gulp plugins
 const gulp = require('gulp');
-var gulpif = require('gulp-if');
 const sass = require('gulp-sass');
 const notify = require("gulp-notify");
-const injectTarget = require('gulp-inject-target');
 
 // scss plugins
 const autoprefixer = require('gulp-autoprefixer');
@@ -24,10 +22,6 @@ const prefixConf = {
     'iOS >= 5'
     ]
 }
-const injectConf = {
-    target: path.dest.cssTarget,
-    selector: path.dest.cssSelector
-}
 module.exports = () => {
     return gulp.src(path.src.scss)
         .pipe(
@@ -35,11 +29,6 @@ module.exports = () => {
             .on('error', sass.logError)
         )
         .pipe( autoprefixer(prefixConf) )
-        .pipe(
-            gulpif(argv.production, injectTarget(injectConf))
-        )
-        .pipe(
-            gulpif(!argv.production, gulp.dest(path.dest.css))
-        )
+        .pipe(gulp.dest(path.dest.css))
     .pipe( notify("SCSS - Complete") );
 }
