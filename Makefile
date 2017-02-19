@@ -28,6 +28,5 @@ boot-prod:
 	make nodejs
 
 deploy:
-	pwd
 	git pull origin master
 	cd ../ && docker-compose restart
