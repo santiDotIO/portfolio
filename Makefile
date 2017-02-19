@@ -34,5 +34,5 @@ boot-dev:
 	make nodejs
 
 test:
-	echo $(date) > './text.txt'
-	git commit -am "test $(date +%Y-%m-%d:%H:%M:%S)"
+	echo `date` > './text.txt'
+	git commit -am 'test `date`'
