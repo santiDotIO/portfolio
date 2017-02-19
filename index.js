@@ -26,7 +26,7 @@ server.get('/', (req, res) => {
 	return res.render('index', hbsData);
 });
 
-server.get('/_deploy', (req, res) => {
+server.post('/_deploy', (req, res) => {
 	console.log(new Date(), req.get('User-Agent'))
 	
 	if ( !(/Bitbucket-Webhooks/.test(req.get('User-Agent'))) ) {
