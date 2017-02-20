@@ -1,31 +1,31 @@
+_current_dir=$(shell pwd)
+_dockerNode=docker run --rm -v $(_current_dir):/usr/src/app --workdir /usr/src/app node:6.9
+_dockerNodeGulp=docker run --rm -v $(_current_dir):/usr/src/app --workdir /usr/src/app/gulp node:6.9
+_gulp=../node_modules/.bin/gulp
+_nodemon=./node_modules/.bin/gulp
+
 update:
 	@# use to ensure all modules are installed
-	@# npm install;
-	docker run --rm -v $(HOME)/app/web:/usr/src/app --workdir /usr/src/app node:6.9 npm install;
+	$(_dockerNode) npm install
 
-nodejs:
-	@# init node
+build-prod:
+	@# Look at./gulp/README.md for more info
+	$(_dockerNodeGulp) $(_gulp) --production
+
+watch:
+	$(_dockerNodeGulp) $(_gulp) watch
+
+server:
+	@# initiate node
 	node index.js
 
 server-dev:
 	@# Using nodemon to watch files over gulp
 	@# This allows to restart server if FE files change and also handlebars
-	./node_modules/.bin/nodemon -e js,hbs,scss,json --watch src --exec "make boot-dev";
-
-build-prod:
-	@# Look at./gulp/README.md for more info
-	@# cd gulp && ../node_modules/.bin/gulp --production
-	docker run --rm -v $(HOME)/app/web:/usr/src/app --workdir /usr/src/app/gulp node:6.9 ../node_modules/.bin/gulp --production;
-
-build-dev:
-	@# Look at./gulp/README.md for more info
-	cd gulp && ../node_modules/.bin/gulp
-
-boot-prod:
-	@# run server
-	make nodejs
+	$(_nodemon) -e js,hbs,scss,json --watch src index.js
 
 deploy:
+	@# executed from Bitbucket pipline
 	ssh portfolio@159.203.136.184 'cd `pwd`/app/web && make do-deploy'
 
 make do-deploy:
