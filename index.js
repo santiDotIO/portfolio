@@ -1,48 +1,39 @@
 'use strict';
 require('dotenv').config();
 
-const joinPath = require('path').join;
+const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 
-const server = express();
-const staticFiles = joinPath(__dirname, './', 'public');
 const host = require('./libs/hostParser');
+const middleware = require('./libs/middleware');
+const routes = require('./libs/routes');
 
-const hbsData = require('./src/data.json');
-const viewFields = joinPath(__dirname, './', 'src/hbs/templates');
-const partialsFiles = joinPath(__dirname, './', 'src/hbs/partials');
-let isProd = /santiagojsosa.com/.test(host);
+// project root
+const projectRoot = path.join(__dirname, './');
+// static files (images, css, js, etc)
+const staticFiles = projectRoot+'public';
+// handlebar root templates location
+const viewFields = projectRoot+'src/hbs/templates';
+// handlebars partials location
+const partialsFiles = projectRoot+'src/hbs/partials';
+
+
+const server = express();
+server.locals.data = require(projectRoot+'src/data.json');
 server.locals.isProd = host.isProd('santiagojsosa.com');
 
 server.use(express.static(staticFiles));
+server.use(middleware.redirectToTop)
+server.use(middleware.prefixWWW)
+
 server.set('view engine', 'hbs');
 server.set('views', viewFields);
+
 hbs.registerPartials(partialsFiles);
+hbs.localsAsTemplateData(server);
 
 // main route
-server.get('/', (req, res) => {
-	console.log(new Date(), 'index')
-	hbsData.isProd = isProd;
-	return res.render('index', hbsData);
-});
+server.get('/', routes.main);
 
-
-// redirect non-www to www
-server.get('/*', function(req, res, next) {
-  if (req.headers.host.match(/^www/) !== null ) {
-    res.redirect('http://' + req.headers.host.replace(/^www\./, '') + req.url);
-  } else {
-    next(); 
-  }
-})
-
-// redirect all non-files to root
-server.all('/:path', (req, res) => {
-	console.log(new Date(), 'redirect', req.params.path)
-	return res.status(301).redirect('/');
-});
-
-
-// console.log(process.env);
-server.listen(process.env.PORT, ()=>console.log(host));server.listen(process.env.PORT, ()=>host.log());
+server.listen(process.env.PORT, ()=>host.log());

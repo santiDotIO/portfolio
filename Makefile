@@ -2,7 +2,7 @@ _current_dir=$(shell pwd)
 _dockerNode=docker run --rm -v $(_current_dir):/usr/src/app --workdir /usr/src/app node:6.9
 _dockerNodeGulp=docker run --rm -v $(_current_dir):/usr/src/app --workdir /usr/src/app/gulp node:6.9
 _gulp=../node_modules/.bin/gulp
-_nodemon=./node_modules/.bin/gulp
+_nodemon=./node_modules/.bin/nodemon
 
 update:
 	@# use to ensure all modules are installed
@@ -22,7 +22,7 @@ server:
 server-dev:
 	@# Using nodemon to watch files over gulp
 	@# This allows to restart server if FE files change and also handlebars
-	$(_nodemon) -e js,hbs,scss,json --watch src index.js
+	$(_nodemon) -e js,hbs,scss,json index.js
 
 deploy:
 	@# executed from Bitbucket pipline
