@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>{{ site_name }} - {{description}}</title>
+	<title>{{ @data.site_name }} - {{ @data.description }}</title>
 	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -17,7 +17,6 @@
 <body>
 	{{> loader}}
 	<div class="container row align-middle">
-
 		<div class="column small-12 medium-10 medium-offset-1">
 			<div class="row">
 				{{> header}}
@@ -26,7 +25,7 @@
 				{{> main}}
 			</div>
 			<div class="row">
-				{{> social}}
+				{{> footer}}
 			</div>
 		</div>
 	</div>
