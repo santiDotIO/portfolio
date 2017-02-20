@@ -9,9 +9,9 @@ Middleware.redirectToTop = function(req, res, next) {
 }
 
 Middleware.prefixWWW = function(req, res, next) {
-	const hasWWW = /^www/.test(req.headers.host)
-	
-	if (req.app.locals.isProd && hasWWW) {
+	const wwwMissing = !(/^www/.test(req.headers.host))
+	// console.log(req.headers.host, wwwMissing);
+	if (req.app.locals.isProd && wwwMissing) {
 		console.log(new Date(), 'prefix www')
 		const properHost = `${req.protocol}://www.${req.hostname}${req.url}`;
 		return res.redirect(properHost);
