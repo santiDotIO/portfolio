@@ -1,0 +1,42 @@
+@import '../../node_modules/foundation-sites/scss/foundation';
+
+$loaderSize: rem-calc(50px);
+$loaderDuration:2s;
+$contentFadeAnimation: 1s;
+
+.container{
+	background-color: $white;
+	transition: opacity $contentFadeAnimation;
+	opacity: 0;
+}
+
+.loader{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: $loaderSize;
+	height: $loaderSize;
+	z-index: -9999;
+	border: rem-calc(3px) solid $black;
+	border-radius: 100%;
+	animation: load-spin $loaderDuration infinite Linear;
+}
+
+.loader__inner {
+	display: block;
+	background-color: $white;
+	width: rem-calc(11px);
+	height: rem-calc(5px);
+	transform: translateY(rem-calc(-3px));
+	margin: auto;
+}
+
+
+@keyframes load-spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}
