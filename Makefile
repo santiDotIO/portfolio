@@ -28,8 +28,12 @@ deploy:
 	@# executed from Bitbucket pipline
 	ssh portfolio@159.203.136.184 'cd `pwd`/app/web && make do-deploy'
 
+restart-docker:
+	cd ../ && docker-compose down && docker-compose up -d
+
 make do-deploy:
 	git pull origin master
 	make update
 	make build-prod
-	cd ../ && docker-compose restart
+	make restart-docker;
+	
