@@ -1,6 +1,5 @@
 'use strict';
 require('dotenv').config();
-const host = (typeof process.env.VIRTUAL_HOST == 'undefiend') ? `http://localhost:${process.env.PORT}` : `http://${process.env.VIRTUAL_HOST}`
 
 const joinPath = require('path').join;
 const express = require('express');
@@ -8,11 +7,13 @@ const hbs = require('hbs');
 
 const server = express();
 const staticFiles = joinPath(__dirname, './', 'public');
+const host = require('./libs/hostParser');
 
 const hbsData = require('./src/data.json');
 const viewFields = joinPath(__dirname, './', 'src/hbs/templates');
 const partialsFiles = joinPath(__dirname, './', 'src/hbs/partials');
 let isProd = /santiagojsosa.com/.test(host);
+server.locals.isProd = host.isProd('santiagojsosa.com');
 
 server.use(express.static(staticFiles));
 server.set('view engine', 'hbs');
@@ -44,4 +45,4 @@ server.all('/:path', (req, res) => {
 
 
 // console.log(process.env);
-server.listen(process.env.PORT, ()=>console.log(host));
+server.listen(process.env.PORT, ()=>console.log(host));server.listen(process.env.PORT, ()=>host.log());
