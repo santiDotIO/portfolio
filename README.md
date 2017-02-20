@@ -1,5 +1,11 @@
 [Sample](https://designbyatlas.com/)
 
+# Roadmap
+
+* [x] https
+* [x] optimize [load speed](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fwww.santiagojsosa.com%2F&tab=mobile)
+* [x] redirect **non-www** to **www**
+
 # Using nodemon over gulp
 
 ## Problem
