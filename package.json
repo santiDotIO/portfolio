@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "[Sample](https://designbyatlas.com/)",
   "main": "index.js",
-  "scripts": {
-    "production": "make boot-prod",
-    "development": "make server-dev"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/santi6291/portfolio-static.git"
