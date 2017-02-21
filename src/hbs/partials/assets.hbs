@@ -2,11 +2,26 @@
 	<link rel="stylesheet" href="/css/small.css">
 	<script>
 	(function(w,d) {
-		var h = document.querySelector('head')
-		var s = d.createElement('link');
-		s.rel = 'stylesheet';
-		s.href = location.href + 'css/app.css';
-		h.appendChild(s);
+		var loadDeferredStyles = function () {
+			// get head tag
+			var h = d.querySelector('head')
+			// crate link element
+			var s = d.createElement('link');
+			// set rel and href
+			s.rel = 'stylesheet';	
+			s.href = location.origin + '/css/app.css';
+			// append to head
+			h.appendChild(s);
+		}
+		
+		// https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame		
+		var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+
+		if (raf) {
+			raf(function() { w.setTimeout(loadDeferredStyles, 0); });
+		} else {
+			w.addEventListener('load', loadDeferredStyles);
+		}
 	})(window,document);
 	</script>
 {{/if}}
