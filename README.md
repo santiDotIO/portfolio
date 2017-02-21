@@ -2,7 +2,8 @@
 
 # Roadmap
 
-* [Structured Data](https://developers.google.com/search/docs/guides/intro-structured-data?visit_id=1-636232848729752989-3223931780&hl=en&rd=1)
+* [] use http/2
+* [] [Structured Data](https://developers.google.com/search/docs/guides/intro-structured-data?visit_id=1-636232848729752989-3223931780&hl=en&rd=1)
 * [] optimize [load speed](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fwww.santiagojsosa.com%2F&tab=mobile)
 * [x] [https](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion)
 * [x] redirect **non-www** to **www**
