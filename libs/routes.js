@@ -1,7 +1,7 @@
 let Routes = {};
 
 Routes.main = function (req, res) {
-	console.log(new Date(), req.url)
+	console.log(new Date(), '/index')
 	return res.render('index');
 }
 

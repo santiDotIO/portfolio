@@ -15,7 +15,6 @@ class hostParser {
 	}
 
 	localhostString(port){
-		console.log('localhostString');
 		this.cleanHost = `http://localhost:${port}`;
 	}
 	
