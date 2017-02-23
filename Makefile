@@ -1,19 +1,19 @@
 _current_dir=$(shell pwd)
-_dockerNode=docker run --rm -v $(_current_dir):/usr/src/app --workdir /usr/src/app node:6.9
-_dockerNodeGulp=docker run --rm -v $(_current_dir):/usr/src/app --workdir /usr/src/app/gulp node:6.9
+# _dockerNode=docker run --rm -v $(_current_dir):/usr/src/app --workdir /usr/src/app node:6.9
+# _dockerNodeGulp=docker run --rm -v $(_current_dir):/usr/src/app --workdir /usr/src/app/gulp node:6.9
 _gulp=../node_modules/.bin/gulp
 _nodemon=./node_modules/.bin/nodemon
 
 update:
 	@# use to ensure all modules are installed
-	$(_dockerNode) npm install
+	npm install
 
 build-prod:
 	@# Look at./gulp/README.md for more info
-	$(_dockerNodeGulp) $(_gulp) --production
+	cd gulp && $(_gulp) --production
 
 watch:
-	$(_dockerNodeGulp) $(_gulp) watch
+	cd gulp && $(_gulp) watch
 
 server:
 	@# initiate node
@@ -24,16 +24,15 @@ server-dev:
 	@# This allows to restart server if FE files change and also handlebars
 	$(_nodemon) -e js,hbs,scss,json index.js
 
-deploy:
+copy-to-server:
 	@# executed from Bitbucket pipline
-	ssh portfolio@159.203.136.184 'cd `pwd`/app/web && make do-deploy'
+	@# ssh portfolio@159.203.136.184 'cd `pwd`/app/web && make do-deploy'
+	scp -r ./public/css portfolio@159.203.136.184:public/css
+	scp -r ./public/js portfolio@159.203.136.184:public/js
 
-restart-docker:
-	cd ../ && docker-compose down; docker-compose up -d
+sync-server:
+	ssh portfolio@159.203.136.184 'cd `pwd`/app && make update-server;'
 
-make do-deploy:
+update-server:
 	git pull origin master
-	make update
-	make build-prod
-	make restart-docker;
-	
+	cd ../ && docker-compose down; docker-compose up -d
