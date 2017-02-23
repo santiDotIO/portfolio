@@ -27,8 +27,8 @@ server-dev:
 copy-to-server:
 	@# executed from Bitbucket pipline
 	@# ssh portfolio@159.203.136.184 'cd `pwd`/app/web && make do-deploy'
-	scp -r ./public/css portfolio@159.203.136.184:public/css
-	scp -r ./public/js portfolio@159.203.136.184:public/js
+	scp -r ./public/css portfolio@159.203.136.184:app/web/public/css
+	scp -r ./public/js portfolio@159.203.136.184:app/web/public/js
 
 sync-server:
 	ssh portfolio@159.203.136.184 'cd `pwd`/app && make update-server;'
