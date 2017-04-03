@@ -3,7 +3,7 @@
 	"host_name" : "santiagojsosa.com",
 	"headshot":{
 		"image": "/assets/santiago-sosa-headshot.jpg",
-		"alt": "Santiago J Sosa â€“ New York City based web developer"
+		"alt": "Santiago J Sosa – New York City based web developer"
 	},
 	"description": "Well rounded Web developer based in NYC",
 	"body": {
@@ -20,10 +20,6 @@
 	},{
 		"icon":"assets/icons/github.svg",
 		"url": "https://github.com/santi6291",
-		"target": "_blank"
-	},{
-		"icon":"assets/icons/linkedin.svg",
-		"url": "https://www.linkedin.com/in/santiagojsosa/",
 		"target": "_blank"
 	},{
 		"icon":"assets/icons/envelope.svg",
