@@ -12,6 +12,8 @@ pipelines:
 #          - mkdir -p ~/.ssh
 #          - cat deploy/known_hosts >> ~/.ssh/known_hosts
 #          - (umask  077 ; echo $MY_SSH_KEY | base64 --decode -i > ~/.ssh/id_rsa)
+          - ssh -T docker-user@45.55.176.81 exit
+          - cat .ssh/id_rsa.pub
           - make update
           - make build-prod
           - make copy-to-server
