@@ -31,5 +31,5 @@ copy-to-server:
 	scp -r ./public/js portfolio@159.203.136.184:app/web/public/js
 
 sync-server:
-	ssh portfolio@159.203.136.184 'cd `pwd`/app/web && git pull origin master'
-	ssh portfolio@159.203.136.184 'cd `pwd`/app && docker-compose down; docker-compose up -d'
+	ssh docker-user@45.55.176.81 'cd `pwd`/portfolio-static/web && git pull origin master'
+	ssh docker-user@45.55.176.81 'cd `pwd`/portfolio-static && docker-compose down; docker-compose up -d'
