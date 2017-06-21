@@ -12,7 +12,7 @@ pipelines:
 #          - mkdir -p ~/.ssh
 #          - cat deploy/known_hosts >> ~/.ssh/known_hosts
 #          - (umask  077 ; echo $MY_SSH_KEY | base64 --decode -i > ~/.ssh/id_rsa)
-          - ls .ssh/
+          - ls ~/.ssh/config
           - make update
           - make build-prod
           - make copy-to-server
