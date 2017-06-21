@@ -27,8 +27,8 @@ server-dev:
 copy-to-server:
 	@# executed from Bitbucket pipline
 	@# ssh portfolio@159.203.136.184 'cd `pwd`/app/web && make do-deploy'
-	scp -r ./public/css portfolio@159.203.136.184:app/web/public/css
-	scp -r ./public/js portfolio@159.203.136.184:app/web/public/js
+	scp -r ./public/css docker-user@45.55.176.81:portfolio-static/web/public/css
+	scp -r ./public/js docker-user@45.55.176.81:portfolio-static/web/public/js
 
 sync-server:
 	ssh docker-user@45.55.176.81 'cd `pwd`/portfolio-static/web && git pull origin master'
