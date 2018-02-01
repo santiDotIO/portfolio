@@ -33,6 +33,12 @@ server.set('views', viewFields);
 hbs.registerPartials(partialsFiles);
 hbs.localsAsTemplateData(server);
 
+server.use((req, res) =>{
+    if (req.hostname != 'localhost' || req.hostname != 'santisosa.com') {
+        res.redirect(301, 'https://santisosa.com');
+    }
+});
+
 // main route
 server.get('/', routes.main);
 
