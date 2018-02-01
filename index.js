@@ -35,6 +35,7 @@ hbs.localsAsTemplateData(server);
 
 server.use((req, res, next) =>{
     if (/(localhost|santisosa.com)/.test(req.hostname) == false) {
+        console.log('redirecting: ', req.hostname)
         res.redirect(301, 'https://santisosa.com');
     }
     next();
