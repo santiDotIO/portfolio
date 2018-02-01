@@ -34,6 +34,7 @@ hbs.registerPartials(partialsFiles);
 hbs.localsAsTemplateData(server);
 
 server.use((req, res) =>{
+    console.log(req.hostname)
     if (req.hostname != 'localhost' || req.hostname != 'santisosa.com') {
         res.redirect(301, 'https://santisosa.com');
     }
