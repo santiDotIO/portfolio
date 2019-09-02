@@ -13,7 +13,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
-    - name: Install depednecies
+    - name: Install dependencies
       uses: docker://node:10.15.3
       with:
         entrypoint: npm
