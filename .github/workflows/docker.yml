@@ -1,6 +1,11 @@
-name: CI
+# name: CI
+name: Build Production Docker Image
 
-on: [push]
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:    
+      - master         # Push events on master branch
 
 jobs:
   build:
@@ -8,10 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: Compile Frontend Assets
+      uses: docker://node:10.15.3
+      with:
+        entrypoint: make
+        args: build-prod
+    - name: Build Docker Image
+      uses: actions/docker/cli@7ffaaef
+      with:
+        args: build ./ --no-cache -t santisosa-portfolio-static ./
+    - name: Production - Tag image for ECR
+      uses: actions/docker/tag@04185cf
+      env:
+        ECR_REGISTRY_ID: ${{ secrets.ECR_REGISTRY_ID }}
+        ECR_REGISTRY_NAME: ${{ secrets.ECR_REGISTRY_NAME }}
+        IMAGE_NAME_PRODUCTION: ${{ secrets.IMAGE_NAME_PRODUCTION }}
+      with:
+        args: santisosa-portfolio-static docker.pkg.github.com/santi6291/portfolio-static/santisosa-portfolio-static
+
