@@ -26,7 +26,7 @@ jobs:
     - name: Build Docker Image
       uses: actions/docker/cli@7ffaaef
       with:
-        args: build ./ --no-cache -t santisosa-portfolio-static ./
+        args: build ./ --no-cache -t santisosa-portfolio-static 
     - name: Production - Tag image for ECR
       uses: actions/docker/tag@04185cf
       env:
