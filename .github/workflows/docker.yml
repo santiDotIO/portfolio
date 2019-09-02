@@ -9,10 +9,10 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     
     steps:
+    - uses: actions/checkout@master
     - name: Install depednecies
       uses: docker://node:10.15.3
       with:
