@@ -13,6 +13,12 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
+    - name: Login to registry
+      uses: actions/docker/login@master
+      env: 
+        DOCKER_REGISTRY_URL: docker.pkg.github.com
+        DOCKER_USERNAME: santi6291
+        DOCKER_PASSWORD: ${{ secrets.PACKAGE_TOKEN }}
     - name: Install dependencies
       uses: docker://node:10.15.3
       with:
