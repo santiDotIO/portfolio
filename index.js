@@ -21,7 +21,7 @@ const partialsFiles = projectRoot+'src/hbs/partials';
 
 const server = express();
 server.locals.data = require(projectRoot+'src/data.json');
-server.locals.isProd = host.isProd('santiagojsosa.com');
+server.locals.isProd = process.env.NODE_ENV === 'production';
 
 server.use(express.static(staticFiles));
 server.use(middleware.redirectToTop)
