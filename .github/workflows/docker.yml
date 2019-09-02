@@ -13,6 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Install depednecies
+      uses: docker://node:10.15.3
+      with:
+        entrypoint: npm
+        args: install
     - name: Compile Frontend Assets
       uses: docker://node:10.15.3
       with:
