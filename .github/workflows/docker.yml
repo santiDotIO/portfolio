@@ -27,12 +27,12 @@ jobs:
       uses: actions/docker/cli@7ffaaef
       with:
         args: build ./ --no-cache -t santisosa-portfolio-static 
-    - name: Production - Tag image for ECR
+    - name: Tag image
       uses: actions/docker/tag@04185cf
-      env:
-        ECR_REGISTRY_ID: ${{ secrets.ECR_REGISTRY_ID }}
-        ECR_REGISTRY_NAME: ${{ secrets.ECR_REGISTRY_NAME }}
-        IMAGE_NAME_PRODUCTION: ${{ secrets.IMAGE_NAME_PRODUCTION }}
       with:
         args: santisosa-portfolio-static docker.pkg.github.com/santi6291/portfolio-static/santisosa-portfolio-static
+    - name: Push Image
+      uses: actions/docker/cli@7ffaaef
+      with:
+        args: push docker.pkg.github.com/santi6291/portfolio-static/santisosa-portfolio-static
 
