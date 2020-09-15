@@ -2,7 +2,7 @@
 	"site_name": "Santiago J. Sosa",
 	"host_name" : "santisosa.com",
 	"headshot":{
-		"image": "assets/headshot.svg",
+		"image": "assets/headshot.jpg",
 		"alt": "Santiago J Sosa – New York City based web developer"
 	},
 	"description": "Well rounded Web developer based in NYC",
