@@ -6,7 +6,10 @@
   "scripts": {
     "hbs": "node bin.js hbs",
     "css": "tailwindcss build ./src/css/main.css -o ./public/css/main.css",
-    "build": "npm run hbs && npm run css"
+    "build": "npm run hbs && npm run css",
+    "watch-hbs": "nodemon --exec 'npm run hbs' --watch ./src/hbs -e hbs",
+    "watch-css": "nodemon --exec 'npm run css' --watch ./src/css --watch ./tailwind.config.js -e css,js",
+    "watch": "concurrently -c blue,green 'npm:watch-hbs' 'npm:watch-css'"
   },
   "repository": {
     "type": "git",
@@ -19,5 +22,7 @@
     "handlebars": "^4.7.6",
     "tailwindcss": "^1.8.10"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
