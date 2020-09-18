@@ -7,9 +7,7 @@ class FileCopy {
     set dest(val) { this._dest = val; }
     
     constructor(fileList) {
-        this.fsCopy = promisify(copyFile)
-
-        ;
+        this.fsCopy = promisify(copyFile);
         this.fileList = fileList;
     }
 
@@ -19,8 +17,8 @@ class FileCopy {
     
     copyFiles(file) {
         return this.fsCopy(
-            path.resolve(__dirname, '../', `${this._src}${file}`), 
-            path.resolve(__dirname, '../', `${this._dest}${file.split('/').pop()}`) 
+            path.resolve(__dirname, `../${this._src}${file}`), 
+            path.resolve(__dirname, `../${this._dest}${file.split('/').pop()}`) 
         );
     }
 }
