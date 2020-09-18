@@ -1,18 +1,18 @@
-<div class="text-left">
-    <div class="mb-4">
-        <h2 class="{{ @root.theme.h2 }} mb-4">Skills and Experience</h2>
+<div class="text-left text-white" id="skills">
+    <div class="mb-4 lg:mb-16">
+        <h2 class="text-cerise-red {{ @root.theme.h2 }} mb-4">Skills and Experience</h2>
         <p class="{{ @root.theme.body }}">Leo velit auctor ligula phasellus lectus imperdiet</p>
     </div>
-    <div class="lg:flex">
+    <div class="lg:flex lg:space-x-3">
         {{#each @root.skills}}
-            <section class="mb-5 lg:flex-1 px-3">
-                <h3 class="mb-2 {{ @root.theme.h3 }}">{{ this.title }}</h3>
-                <ul>
-                    {{#each this.skills}}
-                        <li class="capitalize {{ @root.theme.body }}">{{ this }}</li>
-                    {{/each}}
-                </ul>
-            </section>
+        <section class="mb-5 justify-between" id="{{ this.title }}">
+            <h3 class="mb-2 text-cerise-red {{ @root.theme.h3 }}">{{ this.title }}</h3>
+            <ul class="space-y-2">
+                {{#each this.skills}}
+                <li class="capitalize {{ @root.theme.body }}">{{ this }}</li>
+                {{/each}}
+            </ul>
+        </section>
         {{/each}}
     </div>
 </div>
