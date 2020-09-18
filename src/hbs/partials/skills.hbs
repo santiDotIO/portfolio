@@ -1,0 +1,18 @@
+<div class="text-left">
+    <div class="mb-4">
+        <h2 class="{{ @root.theme.h2 }} mb-4">Skills and Experience</h2>
+        <p class="{{ @root.theme.body }}">Leo velit auctor ligula phasellus lectus imperdiet</p>
+    </div>
+    <div class="lg:flex">
+        {{#each @root.skills}}
+            <section class="mb-5 lg:flex-1 px-3">
+                <h3 class="mb-2 {{ @root.theme.h3 }}">{{ this.title }}</h3>
+                <ul>
+                    {{#each this.skills}}
+                        <li class="capitalize {{ @root.theme.body }}">{{ this }}</li>
+                    {{/each}}
+                </ul>
+            </section>
+        {{/each}}
+    </div>
+</div>

@@ -13,6 +13,37 @@
 			"I have experience with a wide array of tools using <strong>Nodejs</strong>, <strong>PHP</strong> and <strong>devops</strong>."
 		]
 	},
+	"skills": [{
+		"title": "Software engineering",
+		"skills": [
+			"JavaScript",
+			"PHP",
+			"NodeJs",
+			"Codebase architecture",
+			"Continuous Integration / Deployment",
+			"Creating / maintaining custom framworks"
+		]
+	}, {
+		"title": "Management",
+		"skills": [
+			"Employee Performance and Development",
+			"Team Leadership",
+			"Process Development",
+			"Agile software development",
+			"Engineering processes",
+			"Product managment"
+		]
+	}, {
+		"title": "Technologies",
+		"skills": [
+			"Vue",
+			"WordPress",
+			"Angular",
+			"Craft: CMS",
+			"React",
+			"Docker"
+		]
+	}],
 	"social": [{
 		"icon":"assets/icons/twitter.svg",
 		"url": "https://twitter.com/santi6291",
@@ -25,5 +56,11 @@
 		"icon":"assets/icons/envelope.svg",
 		"url": "mailto:info@santiagojsosa.com",
 		"target": "_self"
-	}]
+	}],
+	"theme": {
+		"body": "text-xl lg:text-3xl font-thin leading-relaxed",
+		"h1": "text-3xl lg:text-6xl font-bold",
+		"h2": "text-2xl lg:text-5xl inline-block pb-3 border-b-4 border-solid border-gray",
+		"h3": "text-xl lg:text-3xl"
+	}
 }
