@@ -5,8 +5,10 @@ module.exports = {
   },
   purge: {
     enabled: true,
-    mode: 'all',
-    content: ['./src/hbs/**/*.hbs']
+    content: [
+      './src/hbs/**/*.hbs',
+      './src/data.json',
+    ]
   },
   theme: {
     fontFamily: false,
