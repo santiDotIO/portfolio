@@ -1,0 +1,12 @@
+<main class="lg:flex lg:space-x-4 ">
+    <div class="flex items-center mx-auto space-x-2 mb-10 lg:w-1/4">
+        <h1 class="w-2/4 {{ @root.theme.h1 }}">{{ @root.site_name }}</h1>
+        <img class="rounded-full w-2/4 mx-auto border-2 border-solid border-gray-100" src="{{ @root.headshot.image }}" alt="{{ @root.headshot.alt }}">
+    </div>
+    <div class="lg:w-3/4 text-left {{ @root.theme.body }}">
+        <h2>{{{ @root.body.intro }}}</h2>
+        {{#each @root.body.copy}}
+            <p>{{{ this }}}</p>
+        {{/each}}
+    </div>
+</main>

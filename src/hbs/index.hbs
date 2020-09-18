@@ -3,23 +3,15 @@
 {{> head}}
 <body>
 	<div>
-		<div>
-			<div class="bg-white">
-				<div class="container mx-auto text-center">
-					{{> header}}
-				</div>
-			</div>
-			<div class="bg-gray-100">
-				<div class="container mx-auto text-center">
-					{{> main}}
-				</div>
-			</div>
-			<div class="bg-white">
-				<div class="container mx-auto text-center">
-					{{> footer}}
-				</div>
-			</div>
+		<div class="bg-white py-4 lg:py-20 px-5 text-center">
+			<div class="container mx-auto"> {{> summary}} </div>
+		</div>
+		<div class="bg-gray-100 py-4 lg:py-20 px-5 text-center">
+		</div>
+		<div class="bg-white py-4 lg:py-20 px-5 text-center">
+			<div class="container mx-auto"> {{> footer}} </div>
 		</div>
 	</div>
 </body>
+
 </html>
