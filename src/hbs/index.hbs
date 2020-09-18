@@ -3,15 +3,21 @@
 {{> head}}
 <body>
 	<div>
-		<div class="bg-white py-4 lg:py-20 px-5 text-center">
-			<div class="container mx-auto"> {{> summary}} </div>
-		</div>
-		<div class="bg-gray-100 py-4 lg:py-20 px-5 text-center">
-			<div class="container mx-auto"> {{> skills}} </div>
-		</div>
-		<div class="bg-white py-4 lg:py-20 px-5 text-center">
-			<div class="container mx-auto"> {{> footer}} </div>
-		</div>
+		{{#> section color="bg-white"}}
+			{{> summary}}
+		{{/section}}
+		
+		{{#> section color="bg-charade"}}
+			{{> skills}}
+		{{/section}}
+		
+		{{#> section color="wild-sand"}}
+			{{> footer}}
+		{{/section}}
+		{{#> section color="bg-miragea"}}
+			{{!-- {{> footer}} --}}
+			{{!-- Social --}}
+		{{/section}}
 	</div>
 </body>
 
