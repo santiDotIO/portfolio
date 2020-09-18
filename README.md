@@ -9,3 +9,8 @@ Why a static site? easy, I don't update regularly, it can be serverless and fire
 
 ## hosting
 [Firebase Hosting](https://firebase.google.com/docs/hosting?authuser=0)
+
+## Roadmap
+- [ ] update footer
+- [ ] update intro copy
+- [ ] Server worker
