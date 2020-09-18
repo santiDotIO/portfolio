@@ -56,8 +56,8 @@
 		"target": "_blank"
 	},{
 		"icon":"assets/icons/envelope.svg",
-		"url": "mailto:info@santiagojsosa.com",
-		"target": "_self"
+		"url": "mailto:me@santisosa.com",
+		"target": "_blank"
 	}],
 	"theme": {
 		"body": "text-xl lg:text-3xl font-thin leading-relaxed",
