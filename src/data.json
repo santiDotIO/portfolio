@@ -54,6 +54,11 @@
 		"icon":"assets/icons/github.svg",
 		"url": "https://github.com/santi6291",
 		"target": "_blank"
+	}, {
+		
+		"icon":"assets/icons/linkedin.svg",
+		"url": "https://www.linkedin.com/in/santiago-sosa/",
+		"target": "_blank"
 	},{
 		"icon":"assets/icons/envelope.svg",
 		"url": "mailto:me@santisosa.com",
