@@ -9,7 +9,7 @@
     "build": "npm run hbs && npm run css",
     "watch-hbs": "nodemon --exec 'npm run hbs' --watch ./src/hbs --watch ./src/data.json -e hbs,json",
     "watch-css": "nodemon --exec 'npm run css' --watch ./src/css --watch ./tailwind.config.js -e css,js",
-    "watch-browser": "browser-sync start --server --startPath './public' --files 'public/**/*'",
+    "watch-browser": "browser-sync start --server --ss './public' --files 'public/**/*'",
     "watch": "concurrently -c blue,green,red 'npm:watch-hbs' 'npm:watch-css' 'npm:watch-browser'"
   },
   "repository": {
