@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'MontserratAlternates';
+    src: url('/assets/montserrat_alternates/MontserratAlternates-Light.ttf');
+    font-weight: 300
+}
+
+@font-face {
+    font-family: 'MontserratAlternates';
+    src: url('/assets/montserrat_alternates/MontserratAlternates-Medium.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'MontserratAlternates';
+    src: url('/assets/montserrat_alternates/MontserratAlternates-Black.ttf');
+    font-weight: bold;
+}
+
+*{
+	font-family: 'MontserratAlternates', sans-serif;
+	box-sizing: border-box;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

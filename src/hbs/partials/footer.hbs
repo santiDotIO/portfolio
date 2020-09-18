@@ -1,7 +1,12 @@
-<footer class="social column small-12">
-{{#each @data.social}}
-	<a href="{{ url }}" target="{{ target }}" class="social__link">
-		<img src="{{ icon }}" class="social__image">
+<footer>
+	<div class="mb-4 lg:mb-16">
+        <h2 class="{{ @root.theme.h2 }} mb-4">Let's Connect</h2>
+        <p class="{{ @root.theme.body }}">Leo velit auctor ligula phasellus lectus imperdiet</p>
+    </div>
+
+	{{#each @root.social}}
+	<a href="{{ url }}" target="{{ target }}">
+		<img src="{{ icon }}" class="w-10">
 	</a>
-{{/each}}
+	{{/each}}
 </footer>
