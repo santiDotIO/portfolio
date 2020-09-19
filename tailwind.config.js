@@ -4,7 +4,7 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    enabled: true,
+    enabled: false,
     content: [
       './src/hbs/**/*.hbs',
       './src/data.json',
@@ -24,7 +24,11 @@ module.exports = {
       'wild-sand': '#f5f5f5',
       'abbey': '#444649',
     },
-    extend: {},
+    extend: {
+      screens: {
+        'xs': '375px',
+      }
+    },
   },
   variants: {},
   plugins: [],
