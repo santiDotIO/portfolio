@@ -1,5 +1,5 @@
-<section class="">
-	<div class="mb-4 lg:mb-10">
+<section class="space-y-4 lg:space-y-10">
+	<div>
 		<h2 class="text-cerise-red {{ @root.theme.h2 }} mb-4">{{ @root.body.titles.connect }}</h2>
 	</div>
 	<div class="flex items-center space-x-10">
@@ -8,5 +8,8 @@
 			<img src="{{ icon }}" class="w-10">
 		</a>
 		{{/each}}
+	</div>
+	<div>
+		<p class="text-cerise-red {{ @root.theme.body }}">&copy;{{ date 'getFullYear' }} no rights reserved.</p>
 	</div>
 </section>

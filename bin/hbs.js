@@ -22,6 +22,7 @@ class HandleBarsCompiler {
     configure() {
         const main = fs.readFileSync( this.HBS_ENTRY ).toString();
         fs.readdirSync(this.HBS_PARTIALS).map(this.registerPartials.bind(this))
+        this.registerHelpers();
         this.template = this.hbs.compile(main);
     }
 
@@ -30,6 +31,10 @@ class HandleBarsCompiler {
         const content = fs.readFileSync( path.resolve(this.HBS_PARTIALS, file) ).toString()
         // register partial name sans extension
         this.hbs.registerPartial(file.replace('.hbs', ''), content);
+    }
+    
+    registerHelpers() {
+        this.hbs.registerHelper('date', (propName = 'toDateString') =>  (new Date())[propName]() )
     }
 }
 
