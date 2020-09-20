@@ -11,7 +11,11 @@
 		"copy": [
 			"Passionate problem solver and simplicity enthusiast. I like to keep things simple but add complexity where needed to provide a future proof solution.",
 			"I have experience with a wide array of tools using <strong>Nodejs</strong>, <strong>PHP</strong> and <strong>devops</strong>."
-		]
+		],
+		"titles": {
+			"skills": "Skills and Experience",
+			"connect": "Connect"
+		}
 	},
 	"skills": [{
 		"title": "Software engineering",
