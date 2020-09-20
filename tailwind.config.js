@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -24,11 +26,10 @@ module.exports = {
       'wild-sand': '#f5f5f5',
       'abbey': '#444649',
     },
-    extend: {
-      screens: {
-        'xs': '375px',
-      }
-    },
+    screens: {...{
+      xs: '350px'
+    }, ...defaultTheme.screens},
+    extend: {},
   },
   variants: {},
   plugins: [],
