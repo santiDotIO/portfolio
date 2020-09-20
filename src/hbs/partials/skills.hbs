@@ -1,8 +1,8 @@
 <div class="text-left text-white" id="skills">
-    <div class="mb-4 lg:mb-10">
-        <h2 class="text-cerise-red {{ @root.theme.h2 }} mb-4">Skills and Experience</h2>
+    <div class="mb-4 md:mb-10">
+        <h2 class="text-cerise-red {{ @root.theme.h2 }} mb-4">{{ @root.body.titles.skills }}</h2>
     </div>
-    <div class="lg:flex lg:space-x-3">
+    <div class="md:flex md:space-x-3">
         {{#each @root.skills}}
         <section class="mb-5 justify-between" id="{{ this.title }}">
             <h3 class="mb-2 text-cerise-red {{ @root.theme.h3 }}">{{ this.title }}</h3>
