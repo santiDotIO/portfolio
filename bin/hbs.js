@@ -8,9 +8,10 @@ class HandleBarsCompiler {
         this.template = undefined;
         this.HBS_ENTRY    = path.resolve(__dirname, '../src/hbs/index.hbs');
         this.HBS_PARTIALS = path.resolve(__dirname, '../src/hbs/partials/');
-        this.HBS_DATA     = require( path.resolve(__dirname, '../src/data.json') );
         this.OUTPUT_DIR   = path.resolve(__dirname, '../public/index.html');
+        this.HBS_DATA     = require( path.resolve(__dirname, '../src/data.json') );
         
+        this.HBS_DATA.isProd = production;
         this.configure();
     }
     

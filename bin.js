@@ -7,7 +7,8 @@ const HandleBarsCompiler = require('./bin/hbs');
 // console.log(tailwindcss)
 switch (args[0]) {
     case 'hbs':
-        (new HandleBarsCompiler()).compile();
+        const isProd = process.env.NODE_ENV == 'production';
+        (new HandleBarsCompiler(isProd)).compile();
     break;
     case 'copy':
         const copyInstace = new FileCopy([
