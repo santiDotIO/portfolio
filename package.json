@@ -21,7 +21,7 @@
   "license": "UNLICENSED",
   "homepage": "https://github.com/santi6291/portfolio",
   "dependencies": {
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "tailwindcss": "^1.8.10"
   },
   "devDependencies": {
