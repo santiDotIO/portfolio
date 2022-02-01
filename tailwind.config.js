@@ -1,23 +1,18 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: {
-    enabled: false,
-    content: [
-      './src/hbs/**/*.hbs',
-      './src/data.json',
-    ]
-  },
+  content: [
+    './src/hbs/**/*.hbs',
+    './src/data.json',
+  ],
+  media: false,
   theme: {
     fontFamily: false,
     colors: {
       'white': '#ffffff',
       'black': '#000000',
-      'cerise-red': '#e31b6d',
+      // 'cerise-red': '#e31b6d',
+      'cerise-red': '#ffffff',
       'charade': '#252934',
       'miragea': '#1b242f',
       'dove-gray': '#616161',
