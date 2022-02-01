@@ -10,6 +10,7 @@
 		{{/each}}
 	</div>
 	<div>
-		<p class="text-cerise-red {{ @root.theme.body }}">&copy;{{ date 'getFullYear' }} no rights reserved.</p>
+		<p class="text-cerise-red {{ @root.theme.body }}">&copy;<span id="year">{{ date 'getFullYear' }}</span> no rights reserved.</p>
+		<script>document.querySelector('#year').innerText = new Date().getFullYear</script>
 	</div>
 </section>
