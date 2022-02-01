@@ -52,19 +52,23 @@
 	}],
 	"social": [{
 		"icon":"assets/icons/twitter.svg",
+		"name": "Twitter",
 		"url": "https://twitter.com/santi6291",
 		"target": "_blank"
 	},{
 		"icon":"assets/icons/github.svg",
+		"name": "Github",
 		"url": "https://github.com/santi6291",
 		"target": "_blank"
 	}, {
 		
 		"icon":"assets/icons/linkedin.svg",
+		"name": "linkedIxn",
 		"url": "https://www.linkedin.com/in/santiago-sosa/",
 		"target": "_blank"
 	},{
 		"icon":"assets/icons/envelope.svg",
+		"name": "Email",
 		"url": "mailto:me@santisosa.com",
 		"target": "_blank"
 	}],

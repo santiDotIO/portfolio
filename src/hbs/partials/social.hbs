@@ -4,8 +4,8 @@
 	</div>
 	<div class="flex items-center space-x-10">
 		{{#each @root.social}}
-		<a class="transition-transform duration-300 transform hover:scale-125" href="{{ url }}" target="{{ target }}">
-			<img src="{{ icon }}" class="w-10">
+		<a class="transition-transform duration-300 transform hover:scale-125" href="{{ url }}" target="{{ target }}" rel="noopener">
+			<img src="{{ icon }}" class="w-10" width="40" height="40" alt="{{ name }}">
 		</a>
 		{{/each}}
 	</div>
