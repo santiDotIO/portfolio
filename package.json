@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "hbs": "node bin.js hbs",
-    "css": "tailwindcss build ./src/css/main.css -o ./public/css/main.css",
+    "css": "tailwindcss build -i ./src/css/main.css -o ./public/css/main.css",
     "copy": "node bin.js copy",
     "build": "npm run hbs && npm run css && npm run copy",
     "watch-hbs": "nodemon --exec 'npm run hbs' --watch ./src/hbs --watch ./src/data.json -e hbs,json",
-    "watch-css": "nodemon --exec 'npm run css' --watch ./src/css --watch ./tailwind.config.js -e css,js",
+    "watch-css": "tailwindcss --watch -i ./src/css/main.css -o ./public/css/main.css",
     "watch-browser": "browser-sync start --server --ss './public' --files 'public/**/*'",
     "watch": "npm run copy && concurrently -c blue,green,red 'npm:watch-hbs' 'npm:watch-css' 'npm:watch-browser'"
   },
