@@ -10,6 +10,15 @@ Why a static site? easy, I don't update regularly, it can be serverless and fire
 ## hosting
 [Firebase Hosting](https://firebase.google.com/docs/hosting?authuser=0)
 
+## Generate CI token
+Generate token
+
+```
+npx firebase login:ci
+```
+
+Add it to GH action secret
+
 ## Roadmap
 - [ ] update footer
 - [ ] update intro copy
