@@ -5,49 +5,37 @@
 		"image": "/assets/headshot.jpg",
 		"alt": "Santiago J Sosa – New York City based web developer"
 	},
-	"description": "Well rounded Web developer based in NYC",
-	"body": {
-		"intro": "Well rounded Web developer based in NYC, with experience on multiple Front-end and Back-end platforms.",
-		"copy": [
-			"Passionate problem solver and simplicity enthusiast. I like to keep things simple but add complexity where needed to provide a future proof solution.",
-			"I have experience with a wide array of tools using <strong>Nodejs</strong>, <strong>PHP</strong> and <strong>devops</strong>."
-		],
-		"titles": {
-			"skills": "Skills and Experience",
-			"connect": "Connect"
-		}
-	},
+	"description": "Senior Full stack web developer based in NYC",
 	"skills": [{
-		"title": "Software engineering",
+		"title": "Engineering",
 		"skills": [
-			"JavaScript",
-			"PHP",
-			"NodeJs",
-			"Codebase architecture",
-			"Continuous Integration / Deployment",
-			"Creating / maintaining custom framworks"
+			"Technical lead",
+			"Object oriented programming",
+			"Single page application",
+			"Mobile App development",
+			"AWS: Auto scaling solutions",
+			"modular code design"
 		]
 	}, {
 		"title": "Management",
 		"skills": [
-			"Employee Performance and Development",
-			"Team Leadership",
-			"Process Development",
-			"Agile software development",
-			"Engineering processes",
-			"Product managment",
-			"Mobile App development"
+			"employee performance review",
+			"Team building",
+			"Goal-oriented",
+			"Motivating",
+			"Time management",
+			"Agile development"
 		]
 	}, {
 		"title": "Technologies",
 		"skills": [
 			"Vue",
-			"WordPress",
-			"Angular",
-			"Craft: CMS",
 			"React",
+			"Express JS",
 			"Docker",
-			"Cordova / Ionic"
+			"Cordova / Ionic",
+			"Wordpress",
+			"Craft CMS"
 		]
 	}],
 	"social": [{
@@ -73,7 +61,7 @@
 		"target": "_blank"
 	}],
 	"theme": {
-		"body": "text-xl lg:text-3xl font-thin leading-relaxed",
+		"body": "text-xl lg:text-3xl font-thin leading-relaxed lg:leading-relaxed",
 		"h1": "tracking-wide text-3xl lg:text-6xl font-bold",
 		"h2": "text-2xl lg:text-5xl inline-block pb-3 border-b-4 border-solid border-gray",
 		"h3": "text-xl lg:text-3xl"

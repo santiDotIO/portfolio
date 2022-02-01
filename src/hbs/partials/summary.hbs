@@ -5,10 +5,12 @@
     <div class="w-3/4 xs:w-2/4 md:w-1/3 lg:w-1/4 mx-auto items-center mb-10 pr-4">
         <img class="rounded-full mx-auto border-4 border-solid border-abbey" width="296" height="296" src="{{ @root.headshot.image }}" alt="{{ @root.headshot.alt }}">
     </div>
-    <div class="w-full md:w-2/3 lg:w-3/4 text-left text-dove-gray {{ @root.theme.body }}">
-        <h2>{{{ @root.body.intro }}}</h2>
-        {{#each @root.body.copy}}
-            <p>{{{ this }}}</p>
-        {{/each}}
+    <div class="w-full md:w-2/3 lg:w-3/4 text-left text-dove-gray space-y-2 {{ @root.theme.body }}">
+        <p>
+            Full-stack developer based in NYC specializing with experience in but not limited to <strong>ExpressJS</strong>, <strong>Vue</strong>, <strong>React</strong>, <strong>Laravel</strong>, and <strong>Docker</strong>.
+        </p>
+        <p>
+            I'm a passionate problem-solver, motivated by technical, business, and organizational challenges. I genuinely enjoy helping people through coding and empowering others to be their best version in this fantastic field. I have served as technical lead, collaborating with designers, developers, and project managers, to understand and execute client goals, consistently delivering on time and meeting client expectations. I have created and led internal developer knowledge-sharing workshops, helping elevate a culture of collaboration and feedback within the development team. As well as an internship program for marginalized groups, with high success in coaching interns and leading to full-time employment.
+        </p>
     </div>
 </main>
