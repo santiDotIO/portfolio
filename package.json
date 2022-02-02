@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "hbs": "node bin.js hbs",
-    "css": "tailwindcss build -i ./src/css/main.css -o ./public/css/main.css",
+    "css": "tailwindcss --minify -i ./src/css/main.css -o ./public/css/main.css",
     "copy": "node bin.js copy",
     "build": "npm run hbs && npm run css && npm run copy",
     "watch-hbs": "nodemon --exec 'npm run hbs' --watch ./src/hbs --watch ./src/data.json -e hbs,json",
