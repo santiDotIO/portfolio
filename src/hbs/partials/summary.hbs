@@ -1,11 +1,12 @@
-<main id="summary" class="flex flex-wrap items-center lg:items-start">
-    <div class="xs:w-2/4 md:w-full mb-10">
+<main id="summary" class="flex flex-wrap items-center sm:items-start">
+    <div class="xs:w-2/4 sm:w-full mb-10">
         <h1 class="text-abbey {{ @root.theme.h1 }}">{{ @root.site_name }}</h1>
     </div>
-    <div class="w-3/4 xs:w-2/4 md:w-1/3 lg:w-1/4 mx-auto items-center mb-10 pr-4">
+    <div class="w-3/4 xs:w-2/4 sm:hidden lg:block sm:w-1/3 lg:w-1/4 mx-auto items-center mb-10 pr-4">
         <img class="rounded-full mx-auto border-4 border-solid border-abbey" width="296" height="296" src="{{ @root.headshot.image }}" alt="{{ @root.headshot.alt }}">
     </div>
-    <div class="w-full md:w-2/3 lg:w-3/4 text-left text-dove-gray space-y-2 {{ @root.theme.body }}">
+    <div class="w-full {{!-- sm:w-2/3 --}} lg:w-3/4 text-left text-dove-gray space-y-2 {{ @root.theme.body }}">
+        <img class="hidden sm:inline lg:hidden float-left mr-4 mb-1 rounded-full border-4 border-solid border-abbey w-40" width="296" height="296" src="{{ @root.headshot.image }}" alt="{{ @root.headshot.alt }}">
         <p>
             Full-stack developer based in NYC specializing with experience in but not limited to <strong>ExpressJS</strong>, <strong>Vue</strong>, <strong>React</strong>, <strong>Laravel</strong>, and <strong>Docker</strong>.
         </p>
