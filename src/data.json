@@ -41,12 +41,12 @@
 	"social": [{
 		"icon":"assets/icons/twitter.svg",
 		"name": "Twitter",
-		"url": "https://twitter.com/santi6291",
+		"url": "https://twitter.com/santiDotIO",
 		"target": "_blank"
 	},{
 		"icon":"assets/icons/github.svg",
 		"name": "Github",
-		"url": "https://github.com/santi6291",
+		"url": "https://github.com/santiDotIO",
 		"target": "_blank"
 	}, {
 		
